@@ -1,48 +1,110 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تحميل التطبيق</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تحميل تطبيق bot_sa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    header {
+      background-color: #005f73;
+      color: #fff;
+      padding: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 3rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .app-info {
+      text-align: right;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .download-btn {
+      background-color: #008cba;
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #005f73;
+    }
+
+    .downloads {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #555;
+      background-color: #f1f1f1;
+    }
+
+    .visitor-counter {
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <!-- الجزء العلوي من الصفحة -->
-  <header>
-    <div class="container">
-      <h1>تحميل تطبيقنا</h1>
-      <p>تطبيق رائع ومفيد لتحسين تجربتك الرقمية</p>
-    </div>
-  </header>
 
-  <!-- معلومات التطبيق -->
-  <section class="app-info">
-    <div class="container">
-      <h2>معلومات التطبيق</h2>
-      <div class="app-details">
-        <p><strong>الإصدار:</strong> 1.0.0</p>
-        <p><strong>الحجم:</strong> 50MB</p>
-        <p><strong>آخر تحديث:</strong> 12 أبريل 2025</p>
-        <p><strong>عدد التحميلات:</strong> <span id="download-count">1500</span> تحميل</p>
-      </div>
-      <a href="#" class="download-btn">تحميل الآن</a>
-    </div>
-  </section>
+  <header>تحميل تطبيق bot_sa</header>
 
-  <!-- قسم حساب عدد الزوار -->
-  <section class="visitor-counter">
-    <div class="container">
-      <h2>عدد الزوار</h2>
-      <div id="visitor-count" class="visitor-count-box">0</div>
+  <div class="container">
+    <div class="app-info">
+      <p><strong>اسم التطبيق:</strong> bot_sa</p>
+      <p><strong>الإصدار:</strong> 1.0.0</p>
+      <p><strong>الحجم:</strong> 15 ميجا</p>
+      <p><strong>آخر تحديث:</strong> أبريل 2025</p>
     </div>
-  </section>
 
-  <!-- الجزء السفلي من الصفحة -->
+    <button class="download-btn" onclick="startDownload()">📥 تحميل الآن</button>
+
+    <div class="downloads">عدد التحميلات: <span id="download-count">5,421</span></div>
+  </div>
+
   <footer>
-    <div class="container">
-      <p>&copy; 2025 جميع الحقوق محفوظة. تصميم بواسطة فريق التطوير</p>
-    </div>
+    <div>عدد الزوار: <span id="visitor-count">--</span></div>
+    <div class="visitor-counter">© 2025 جميع الحقوق محفوظة</div>
   </footer>
+
+  <script>
+    // تحميل الملف
+    function startDownload() {
+      window.location.href = "bot_sa.apk";
+    }
+
+    // عداد الزوار المحلي (تجريبي - لا يعمل عبر الإنترنت بدون سيرفر)
+    let visits = localStorage.getItem('visit_count') || 0;
+    visits++;
+    localStorage.setItem('visit_count', visits);
+    document.getElementById('visitor-count').innerText = visits;
+  </script>
 </body>
 </html>
